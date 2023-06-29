@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Раздел О нас | Bevel-Store</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="icon" href="img/favicon.svg" type="image/x-icon">
+</head>
+<body onload="getUser()">
+    <div class="container-fluid">
+        <div class="row menu">
+          <div class="sidenav">
+            <ul>
+              <li class="logo">
+                <a href="index.html">
+                  <span class="icon"><i class="fa-brands fa-shopware" style="color: #333333;"></i></span>
+                  <span class="text">Bevel-Store</span>
+                </a>
+              </li>
+              <li>
+                <a href="index.html">
+                  <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                  <span class="text">Home</span>
+                </a>
+              </li>
+              <li>
+                <a href="phones.html">
+                  <span class="icon"><ion-icon name="phone-portrait-outline"></ion-icon></span>
+                  <span class="text">Смартфоны</span>
+                </a>
+              </li>
+              <li>
+                <a href="watch.html">
+                  <span class="icon"><ion-icon name="watch-outline"></ion-icon></span>
+                  <span class="text">Смарт-Часы</span>
+                </a>
+              </li>
+              <li>
+                <a>
+                  <span class="icon"><ion-icon name="person-circle-outline"></ion-icon></span>
+                <p id="userEmail"></p>
+                <button type="submit" class="btn btn-primary" onclick="logout()">Logout</button>
+                </a>
+              </li>
+              <div class="bottom">
+              <li>
+                <a href="reg.html" target="_blank">
+                  <span class="icon"><ion-icon name="log-in-outline"></ion-icon></span>
+                  <span class="text">Регистрация</span>
+                </a>
+              </li>
+            </div>
+            </ul>
+          </div>
+          <div class="bucket" onclick="getBucket()">
+            <i class="fa-solid fa-cart-shopping" id="icon-bucket"></i>
+              <div class="bucket-item">
+                  
+                  <div class="bucket-item__title">Товары в корзине</div>
+                  <div class="bucket-item__list"></div>
+                  <div class="bucket-item__total">Итого: <span class="bucket-item__total-value">0</span> сомони</div>
+                  <div class="bucket-item__buttons">
+                    <button class="bucket-item__button-clear" onclick="clearBucket()">Очистить</button>
+                    <button class="bucket-item__button-buy">Купить</button>
+                  </div>
+                </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row about" id="about1">
+            <div class="col-12">
+              <h2 class="h10"> iStore — интернет-магазин смартфонов, телефонов и аксессуаров</h2>
+              <hr>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+              <div class="about_img">
+                <img src="img/as.jpg">
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="about_text" style="margin-top: 20px;">
+                <p style="color: grey;">Интернет-магазин iStore занимается продажами мобильных телефонов, смартфонов и аксессуаров.
+      
+                  Быть конкурентоспособными в нашем рынке и находиться в воронке лучших интернет-магазинов Таджикистана с 2018 года нам помогают наши принципы, которых мы придерживаемся вне зависимости от внешних экономических или каких-либо еще факторов.
+                  
+                  Мы предлагаем:
+                  
+                  Самые привлекательные цены на рынке Худжанда, а также Таджикистана в целом.
+                  Покупка товара в кредит и в рассрочку сроком от 3 до 12 месяцев.
+                  Только новые оригинальные товары, подлежащие гарантийному обслуживанию.
+                  Огромный каталог товаров, который постоянно обновляется.
+                  Высококвалифицированные специалисты, которые ответят на все Ваши вопросы.
+                  Все, что вы видите на экране нашего интернет магазина, пришло к нам напрямую от производителя. Поэтому мы работаем только с надежными поставщиками.
+                  <ol style="color: grey;">
+                    <li>Самые привлекательные цены на рынке Худжанда, а также Таджикистана в целом.</li>
+                    <li>Покупка товара в кредит и в рассрочку сроком от 3 до 12 месяцев.</li>
+                    <li>Только новые оригинальные товары, подлежащие гарантийному обслуживанию.</li>
+                    <li>Огромный каталог товаров, который постоянно обновляется.</li>
+                    <li>Высококвалифицированные специалисты, которые ответят на все Ваши вопросы.</li>
+                  </ol>
+                  
+                  Мы дорожим каждым клиентом и сделаем все, чтобы Вы остались довольны покупкой!</p>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="container-fluid footer_main mt-5">
+        <div class="footer col-12">
+              <div class="footer_text"><p>Copyright © 2023 By "Mirzoakbar" Официальный сайт iStore | Контакты | О нас</p></div>
+      </div>
+      </div>
+      <script src="js/reg.js"></script>
+  <script src="js/bucket.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

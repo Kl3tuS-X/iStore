@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Раздел Смартфоны | Bevel-Store</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="icon" href="img/favicon.svg" type="image/x-icon">
+</head>
+<body onload="getUser()">
+    <div class="container-fluid">
+        <div class="row menu">
+          <div class="sidenav">
+            <ul>
+              <li class="logo">
+                <a href="#">
+                  <span class="icon"><i class="fa-brands fa-shopware" style="color: #333333;"></i></span>
+                  <span class="text">iStore</span>
+                </a>
+              </li>
+              <li>
+                <a href="index.html">
+                  <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                  <span class="text">Home</span>
+                </a>
+              </li>
+              <li>
+                <a href="phones.html">
+                  <span class="icon"><ion-icon name="phone-portrait-outline"></ion-icon></span>
+                  <span class="text">Смартфоны</span>
+                </a>
+              </li>
+              <li>
+                <a href="watch.html">
+                  <span class="icon"><ion-icon name="watch-outline"></ion-icon></span>
+                  <span class="text">Смарт-Часы</span>
+                </a>
+              </li>
+              <li>
+                <a href="about.html">
+                  <span class="icon"><ion-icon name="people-outline"></ion-icon></span>
+                  <span class="text">О нас</span>
+                </a>
+              </li>
+              <li>
+                <a>
+                  <span class="icon"><ion-icon name="person-circle-outline"></ion-icon></span>
+                <p id="userEmail"></p>
+                <button type="submit" class="btn btn-primary" onclick="logout()">Logout</button>
+                </a>
+              </li>
+              <div class="bottom">
+              <li>
+                <a href="reg.html" target="_blank">
+                  <span class="icon"><ion-icon name="log-in-outline"></ion-icon></span>
+                  <span class="text">Регистрация</span>
+                </a>
+              </li>
+            </div>
+            </ul>
+          </div>
+          <div class="bucket" onclick="getBucket()">
+            <div class="overlay_text">
+              <span class="bucket_list">0</span>
+            </div>
+            <i class="fa-solid fa-cart-shopping" id="icon-bucket"></i>
+              <div class="bucket-item">
+                  
+                  <div class="bucket-item__title">Товары в корзине</div>
+                  <div class="bucket-item__list"></div>
+                  <div class="bucket-item__total">Итого: <span class="bucket-item__total-value">0</span> сомони</div>
+                  <div class="bucket-item__buttons">
+                    <button class="bucket-item__button-clear" onclick="clearBucket()">Очистить</button>
+                    <button class="bucket-item__button-buy">Купить</button>
+                  </div>
+                </div>
+          </div>
+        </div>
+      </div>
+    <section class="carousel_main">
+        <div class="container">
+          <div class="row">
+            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="container">
+                    <div class="row caption" id="caption">
+                      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                        <div class="caption_text mt-5">
+                          <h1>Galaxy S22 <k class="max">5G.</k></h1>
+                          <p>Приноси в свою жизнь только <k class="max">Плюсы!</k></p>
+                        </div>
+                      </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                          <div class="caption_img">
+                            <img src="img/gs22g.png" alt="" style="width: 95%; padding-top: 35px; padding-bottom: 35px;">
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="container">
+                    <div class="row caption" id="caption">
+                      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                        <div class="caption_text mt-5">
+                          <h1>Galaxy ZFlip 4 <k class="max">5G.</k></h1>
+                          <p>Покупай пока не <k class="max">Поздно!</k></p>
+                        </div>
+                      </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                          <div class="caption_img">
+                            <img src="img/gzf4.png" alt="" style="width: 110%;">
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="container">
+                    <div class="row caption" id="caption">
+                      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                        <div class="caption_text mt-5">
+                          <h1>Galaxy ZFold 3 <k class="max">5G.</k></h1>
+                          <p>Всё просто и <k class="max">Качественно!</k></p>
+                        </div>
+                      </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                          <div class="caption_img">
+                            <img src="img/gzfo4.png" alt="" style="width: 100%; padding-top: 20px; padding-bottom: 20px;">
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="container">
+        <div class="row phones" id="phones2">
+          <div class="col-12">
+            <i class="fa-brands fa-android" style="color: #ABBDCD; font-size: 25px; "></i>
+            <h2 class="h2">Смартфоны Samsung</h2>
+            <hr>
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+            <div class="iphone">
+              <div class="col-12">
+                <h4 class="mark_1">Супер Цена</h4>
+                <img src="img/gs22u.jpeg">
+              </div>
+              <div class="col-12">
+                <h3 class="h3">Galaxy S22 Ultra , 256гб</h3>
+                <p class="price_old"><s>8 890c</s></p>
+                <p class="price">7 540c</p>
+                <button onclick="addToBucket('Galaxy S22 Ultra Цена: 7 540c')" class="add_cart "><i class="fa-solid fa-cart-shopping" style="font-size: 15px;"></i> Добавить в Корзину</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+            <div class="iphone">
+              <div class="col-12">
+                <h4 class="mark_1">Выгодная Цена</h4>
+                <img src="img/ga53.jpeg">
+              </div>
+              <div class="col-12">
+                <h3 class="h3">Galaxy A53 , 128гб</h3>
+                <p class="price_old"><s>3 750c</s></p>
+                <p class="price" style="color: #E41D94;">3 190c <k class="super_price">S</k></p>
+                <button onclick="addToBucket('Galaxy A53 Цена: 3 750c')" class="add_cart "><i class="fa-solid fa-cart-shopping" style="font-size: 15px;"></i> Добавить в Корзину</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+            <div class="iphone">
+              <div class="col-12">
+                <h4 class="mark_1">Выгодная Цена</h4>
+                <img src="img/ga73.jpeg">
+              </div>
+              <div class="col-12">
+                <h3 class="h3">Galaxy A73 , 128гб</h3>
+                <p class="price_old"><s>4 350c</s></p>
+                <p class="price">3 750c</p>
+                <button onclick="addToBucket('Galaxy A73 Цена: 3 750c')" class="add_cart "><i class="fa-solid fa-cart-shopping" style="font-size: 15px;"></i> Добавить в Корзину</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+            <div class="iphone">
+              <div class="col-12">
+                <h4 class="mark_1">Выгодная Цена</h4>
+                <img src="img/gs22p.jpeg">
+              </div>
+              <div class="col-12">
+                <h3 class="h3">Galaxy S22 Plus , 256гб</h3>
+                <p class="price_old"><s>7 390c</s></p>
+                <p class="price">6 590c</p>
+                <button onclick="addToBucket('Galaxy S22 Plus Цена: 6 590c')" class="add_cart "><i class="fa-solid fa-cart-shopping" style="font-size: 15px;"></i> Добавить в Корзину</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row phones" id="phones">
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+            <div class="iphone">
+              <div class="col-12">
+                <h4 class="mark_1">Выгодная Цена</h4>
+                <img src="img/gs23p.png">
+              </div>
+              <div class="col-12">
+                <h3 class="h3">Galaxy S23 Plus , 256гб</h3>
+                <p class="price_old"><s>9 890c</s></p>
+                <p class="price" style="color: #E41D94;">9 200c <k class="super_price">S</k></p>
+                <button onclick="addToBucket('Galaxy S23 Plus Цена: 9 890c')" class="add_cart "><i class="fa-solid fa-cart-shopping" style="font-size: 15px;"></i> Добавить в Корзину</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+            <div class="iphone">
+              <div class="col-12">
+                <h4 class="mark_1">Выгодная Цена</h4>
+                <img src="img/s23.png">
+              </div>
+              <div class="col-12">
+                <div class="iphone_text">
+                <h3 class="h3">Galaxy S23 Ultra , 512гб</h3>
+                <p class="price_old"><s>13 590c</s></p>
+                <p class="price">12 150c</p>
+                <button onclick="addToBucket('Galaxy S23 Ultra Цена: 12 150c')" class="add_cart "><i class="fa-solid fa-cart-shopping" style="font-size: 15px;"></i> Добавить в Корзину</button>
+              </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+            <div class="iphone">
+              <div class="col-12">
+                <h4 class="mark_1">Выгодная Цена</h4>
+                <img src="img/ga54.png">
+              </div>
+              <div class="col-12">
+                <h3 class="h3">Galaxy A54 5G , 256гб</h3>
+                <p class="price_old"><s>5 590c</s></p>
+                <p class="price">4 550c</p>
+                <button onclick="addToBucket('Galaxy A54 5G Цена: 4 550c')" class="add_cart "><i class="fa-solid fa-cart-shopping" style="font-size: 15px;"></i> Добавить в Корзину</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+            <div class="iphone">
+              <div class="col-12">
+                <h4 class="mark_1">Выгодная Цена</h4>
+                <img src="img/gzfo4.png">
+              </div>
+              <div class="col-12">
+                <h3 class="h3">Galaxy ZFold 3 5G , 256гб</h3>
+                <p class="price_old"><s>7 150c</s></p>
+                <p class="price">6 599c</p>
+                <button onclick="addToBucket('Galaxy ZFold 3 5G  Цена: 6 599c')" class="add_cart "><i class="fa-solid fa-cart-shopping" style="font-size: 15px;"></i> Добавить в Корзину</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row phones" id="phones">
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+            <div class="iphone">
+              <div class="col-12">
+                <h4 class="mark_1">Выгодная Цена</h4>
+                <img src="img/gzf4.png">
+              </div>
+              <div class="col-12">
+                <h3 class="h3">Galaxy ZFlip 4 5G , 256гб</h3>
+                <p class="price_old"><s>7 890c</s></p>
+                <p class="price">7 250c</p>
+                <button onclick="addToBucket('Galaxy ZFlip 4 5G Цена: 7 250c')" class="add_cart "><i class="fa-solid fa-cart-shopping" style="font-size: 15px;"></i> Добавить в Корзину</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+            <div class="iphone">
+              <div class="col-12">
+                <h4 class="mark_1">Выгодная Цена</h4>
+                <img src="img/gn20u.jpg">
+              </div>
+              <div class="col-12">
+                <div class="iphone_text">
+                <h3 class="h3">Galaxy Note 20 Ultra , 512гб</h3>
+                <p class="price_old"><s>4 500c</s></p>
+                <p class="price">4 250c</p>
+                <button onclick="addToBucket('Galaxy Note 20 Ultra Цена: 4 250c')" class="add_cart "><i class="fa-solid fa-cart-shopping" style="font-size: 15px;"></i> Добавить в Корзину</button>
+              </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+            <div class="iphone">
+              <div class="col-12">
+                <h4 class="mark_1">Выгодная Цена</h4>
+                <img src="img/gn10p5.jpg">
+              </div>
+              <div class="col-12">
+                <h3 class="h3">Galaxy Note 10+ 5G , 256гб</h3>
+                <p class="price_old"><s>3 590c</s></p>
+                <p class="price">3 200c</p>
+                <button onclick="addToBucket('Galaxy Note 10+ 5G Цена: 3 200c')" class="add_cart "><i class="fa-solid fa-cart-shopping" style="font-size: 15px;"></i> Добавить в Корзину</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+            <div class="iphone">
+              <div class="col-12">
+                <h4 class="mark_1">Выгодная Цена</h4>
+                <img src="img/ga14.webp">
+              </div>
+              <div class="col-12">
+                <h3 class="h3">Galaxy A14 5G , 128гб</h3>
+                <p class="price_old"><s>3 150c</s></p>
+                <p class="price">2 399c</p>
+                <button onclick="addToBucket('Galaxy A14 5G Цена: 2 399c')" class="add_cart "><i class="fa-solid fa-cart-shopping" style="font-size: 15px;"></i> Добавить в Корзину</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row phones" id="phones">
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+            <div class="iphone">
+              <div class="col-12">
+                <h4 class="mark_1">Выгодная Цена</h4>
+                <img src="img/ga33.jpg">
+              </div>
+              <div class="col-12">
+                <h3 class="h3">Galaxy A33 5G , 128гб</h3>
+                <p class="price_old"><s>3 240c</s></p>
+                <p class="price">2 850c</p>
+                <button onclick="addToBucket('Galaxy A33 5G Цена: 2 850c')" class="add_cart "><i class="fa-solid fa-cart-shopping" style="font-size: 15px;"></i> Добавить в Корзину</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+            <div class="iphone">
+              <div class="col-12">
+                <h4 class="mark_1">Выгодная Цена</h4>
+                <img src="img/gs10.jpg">
+              </div>
+              <div class="col-12">
+                <div class="iphone_text">
+                <h3 class="h3">Galaxy S10 , 128гб</h3>
+                <p class="price_old"><s>3 290c</s></p>
+                <p class="price">2 750c</p>
+                <button onclick="addToBucket('Galaxy S10 Цена: 2 750c')" class="add_cart "><i class="fa-solid fa-cart-shopping" style="font-size: 15px;"></i> Добавить в Корзину</button>
+              </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+            <div class="iphone">
+              <div class="col-12">
+                <h4 class="mark_1">Выгодная Цена</h4>
+                <img src="img/gf23.jpg">
+              </div>
+              <div class="col-12">
+                <h3 class="h3">Galaxy F23 5G , 128гб</h3>
+                <p class="price_old"><s>2 590c</s></p>
+                <p class="price">2 250c</p>
+                <button onclick="addToBucket('Galaxy F23 5G Цена: 2 250c')" class="add_cart "><i class="fa-solid fa-cart-shopping" style="font-size: 15px;"></i> Добавить в Корзину</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+            <div class="iphone">
+              <div class="col-12">
+                <h4 class="mark_1">Выгодная Цена</h4>
+                <img src="img/gs22g.png">
+              </div>
+              <div class="col-12">
+                <h3 class="h3">Galaxy S22 5G</h3>
+                <p class="price_old"><s>6 150c</s></p>
+                <p class="price">5 250с</p>
+                <button onclick="addToBucket('Galaxy S22 5G Цена: 5 250c')" class="add_cart "><i class="fa-solid fa-cart-shopping" style="font-size: 15px;"></i> Добавить в Корзину</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid footer_main mt-5">
+        <div class="footer col-12">
+              <div class="footer_text"><p>Copyright © 2023 By "Mirzoakbar" Официальный сайт iStore | Контакты | О нас</p></div>
+      </div>
+      </div>
+      <script src="js/reg.js"></script>
+  <script src="js/bucket.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

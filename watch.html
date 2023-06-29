@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Раздел Смарт-Часы | Bevel-Store</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="icon" href="img/favicon.svg" type="image/x-icon">
+</head>
+<body onload="getUser()">
+    <div class="container-fluid">
+        <div class="row menu">
+          <div class="sidenav">
+            <ul>
+              <li class="logo">
+                <a href="#">
+                  <span class="icon"><i class="fa-brands fa-shopware" style="color: #333333;"></i></span>
+                  <span class="text">iStore</span>
+                </a>
+              </li>
+              <li>
+                <a href="index.html">
+                  <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                  <span class="text">Home</span>
+                </a>
+              </li>
+              <li>
+                <a href="phones.html">
+                  <span class="icon"><ion-icon name="phone-portrait-outline"></ion-icon></span>
+                  <span class="text">Смартфоны</span>
+                </a>
+              </li>
+              <li>
+                <a href="watch.html">
+                  <span class="icon"><ion-icon name="watch-outline"></ion-icon></span>
+                  <span class="text">Смарт-Часы</span>
+                </a>
+              </li>
+              <li>
+                <a href="about.html">
+                  <span class="icon"><ion-icon name="people-outline"></ion-icon></span>
+                  <span class="text">О нас</span>
+                </a>
+              </li>
+              <li>
+                <a>
+                  <span class="icon"><ion-icon name="person-circle-outline"></ion-icon></span>
+                <p id="userEmail"></p>
+                <button type="submit" class="btn btn-primary" onclick="logout()">Logout</button>
+                </a>
+              </li>
+              <div class="bottom">
+              <li>
+                <a href="reg.html" target="_blank">
+                  <span class="icon"><ion-icon name="log-in-outline"></ion-icon></span>
+                  <span class="text">Регистрация</span>
+                </a>
+              </li>
+            </div>
+            </ul>
+          </div>
+          <div class="bucket" onclick="getBucket()">
+            <div class="overlay_text">
+              <span class="bucket_list">0</span>
+            </div>
+            <i class="fa-solid fa-cart-shopping" id="icon-bucket"></i>
+              <div class="bucket-item">
+                  
+                  <div class="bucket-item__title">Товары в корзине</div>
+                  <div class="bucket-item__list"></div>
+                  <div class="bucket-item__total">Итого: <span class="bucket-item__total-value">0</span> сомони</div>
+                  <div class="bucket-item__buttons">
+                    <button class="bucket-item__button-clear" onclick="clearBucket()">Очистить</button>
+                    <button class="bucket-item__button-buy">Купить</button>
+                  </div>
+                </div>
+          </div>
+        </div>
+      </div>
+    <section class="carousel_main">
+        <div class="container">
+          <div class="row">
+            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="container">
+                    <div class="row caption" id="caption">
+                      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                        <div class="caption_text mt-5">
+                          <h1>Galaxy Watch 5 <k class="max">Pro.</k></h1>
+                          <p>Приноси в свою жизнь только <k class="max">Плюсы!</k></p>
+                          <button type="button" ><i class="fa-solid fa-cart-shopping" style="font-size: 15px;"></i> Купить Сейчас!</button>
+                        </div>
+                      </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                          <div class="caption_img">
+                            <img src="img/gw5p.png" alt="" style="width: 95%; padding-top: 35px; padding-bottom: 35px;">
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="container">
+                    <div class="row caption" id="caption">
+                      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                        <div class="caption_text mt-5">
+                          <h1>Apple Watch <k class="max">Ultra.</k></h1>
+                          <p>Покупай пока не <k class="max">Поздно!</k></p>
+                          <button type="button" ><i class="fa-solid fa-cart-shopping" style="font-size: 15px;"></i> Купить Сейчас!</button>
+                        </div>
+                      </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                          <div class="caption_img">
+                            <img src="img/w8u.png" alt="" style="width: 109%;">
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="container">
+                    <div class="row caption" id="caption">
+                      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                        <div class="caption_text mt-5">
+                          <h1>Xiaomi Mi Band <k class="max">8.</k></h1>
+                          <p>Всё просто и <k class="max">Качественно!</k></p>
+                          <button type="button" ><i class="fa-solid fa-cart-shopping" style="font-size: 15px;"></i> Купить Сейчас!</button>
+                        </div>
+                      </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                          <div class="caption_img">
+                            <img src="img/xmb8.png" alt="" style="width: 109%;">
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="container">
+        <div class="row phones" id="phones1">
+          <div class="col-12">
+            <ion-icon name="watch-outline" style="color:#ABBDCD; font-size: 30px;"></ion-icon>
+            <h2 class="h2">Смарт Часы</h2>
+            <hr>
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+            <div class="iphone">
+              <div class="col-12">
+                <h4 class="mark_1">Выгодная Цена</h4>
+                <img src="img/wau.jpeg">
+              </div>
+              <div class="col-12">
+                <h3 class="h3">Apple Watch Ultra</h3>
+                <p class="price_old"><s>10 890 c</s></p>
+                <p class="price">8 999c</p>
+                <button onclick="addToBucket('Apple Watch Ultra Цена: 8 999c')" class="add_cart "><i class="fa-solid fa-cart-shopping" style="font-size: 15px;"></i> Добавить в Корзину</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+            <div class="iphone">
+              <div class="col-12">
+                <h4 class="mark_1">Супер Цена</h4>
+                <img src="img/wa8.jpeg">
+              </div>
+              <div class="col-12">
+                <h3 class="h3">Apple Watch 8</h3>
+                <p class="price_old"><s>6 990c</s></p>
+                <p class="price" style="color: #E41D94;">5 999c <k class="super_price">S</k></p>
+                <button onclick="addToBucket('Apple Watch 8 Цена: 5 999c')" class="add_cart "><i class="fa-solid fa-cart-shopping" style="font-size: 15px;"></i> Добавить в Корзину</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+            <div class="iphone">
+              <div class="col-12">
+                <h4 class="mark_1">Выгодная Цена</h4>
+                <img src="img/gw4.jpeg">
+              </div>
+              <div class="col-12">
+                <h3 class="h3">Galaxy Watch 4</h3>
+                <p class="price_old"><s>2 490c</s></p>
+                <p class="price">1 850c</p>
+                <button onclick="addToBucket('Galaxy Watch 4 Цена: 1 850c')" class="add_cart "><i class="fa-solid fa-cart-shopping" style="font-size: 15px;"></i> Добавить в Корзину</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+            <div class="iphone">
+              <div class="col-12">
+                <h4 class="mark_1">Выгодная Цена</h4>
+                <img src="img/ab7.jpeg">
+              </div>
+              <div class="col-12">
+                <h3 class="h3">Xiaomi Amazfit Band 7</h3>
+                <p class="price_old"><s>790c</s></p>
+                <p class="price" style="color: #E41D94;">499c <k class="super_price">S</k></p>
+                <button onclick="addToBucket('Xiaomi Amazfit Band 7 Цена: 790c')" class="add_cart "><i class="fa-solid fa-cart-shopping" style="font-size: 15px;"></i> Добавить в Корзину</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row phones" id="phones1">
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+            <div class="iphone">
+              <div class="col-12">
+                <h4 class="mark_1">Выгодная Цена</h4>
+                <img src="img/gw5p.png">
+              </div>
+              <div class="col-12">
+                <h3 class="h3">Galaxy Watch 5 Pro</h3>
+                <p class="price_old"><s>4 890 c</s></p>
+                <p class="price">3 550c</p>
+                <button onclick="addToBucket('Galaxy Watch 5 Pro Цена: 3 550c')" class="add_cart "><i class="fa-solid fa-cart-shopping" style="font-size: 15px;"></i> Добавить в Корзину</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+            <div class="iphone">
+              <div class="col-12">
+                <h4 class="mark_1">Супер Цена</h4>
+                <img src="img/xmb8.png">
+              </div>
+              <div class="col-12">
+                <h3 class="h3">Xiaomi Mi Band 8</h3>
+                <p class="price_old"><s> 850c</s></p>
+                <p class="price">769c</p>
+                <button onclick="addToBucket('Xiaomi Mi Band 8 Цена: 769c')" class="add_cart "><i class="fa-solid fa-cart-shopping" style="font-size: 15px;"></i> Добавить в Корзину</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+            <div class="iphone">
+              <div class="col-12">
+                <h4 class="mark_1">Выгодная Цена</h4>
+                <img src="img/gw3.png">
+              </div>
+              <div class="col-12">
+                <h3 class="h3">Galaxy Watch3 45mm</h3>
+                <p class="price_old"><s>2 190c</s></p>
+                <p class="price">1 550c</p>
+                <button onclick="addToBucket('Galaxy Watch3 45mm Цена: 1 550c')" class="add_cart "><i class="fa-solid fa-cart-shopping" style="font-size: 15px;"></i> Добавить в Корзину</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+            <div class="iphone">
+              <div class="col-12">
+                <h4 class="mark_1">Выгодная Цена</h4>
+                <img src="img/wa7.webp">
+              </div>
+              <div class="col-12">
+                <h3 class="h3">Apple Watch 7</h3>
+                <p class="price_old"><s>4 790c</s></p>
+                <p class="price" style="color: #E41D94;">3 259c <k class="super_price">S</k></p>
+                <button onclick="addToBucket('Apple Watch 7 Цена: 4 790c')" class="add_cart "><i class="fa-solid fa-cart-shopping" style="font-size: 15px;"></i> Добавить в Корзину</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid footer_main mt-5">
+        <div class="footer col-12">
+              <div class="footer_text"><p>Copyright © 2023 By "Mirzoakbar" Официальный сайт iStore | Контакты | О нас</p></div>
+      </div>
+      </div>
+      <script src="js/reg.js"></script>
+  <script src="js/bucket.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

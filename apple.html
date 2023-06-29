@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Раздел Смартфоны | Bevel-Store</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="icon" href="img/favicon.svg" type="image/x-icon">
+</head>
+<body onload="getUser()">
+    <div class="container-fluid">
+        <div class="row menu">
+          <div class="sidenav">
+            <ul>
+              <li class="logo">
+                <a href="#">
+                  <span class="icon"><i class="fa-brands fa-shopware" style="color: #333333;"></i></span>
+                  <span class="text">iStore</span>
+                </a>
+              </li>
+              <li>
+                <a href="index.html">
+                  <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                  <span class="text">Home</span>
+                </a>
+              </li>
+              <li>
+                <a href="phones.html">
+                  <span class="icon"><ion-icon name="phone-portrait-outline"></ion-icon></span>
+                  <span class="text">Смартфоны</span>
+                </a>
+              </li>
+              <li>
+                <a href="watch.html">
+                  <span class="icon"><ion-icon name="watch-outline"></ion-icon></span>
+                  <span class="text">Смарт-Часы</span>
+                </a>
+              </li>
+              <li>
+                <a href="about.html">
+                  <span class="icon"><ion-icon name="people-outline"></ion-icon></span>
+                  <span class="text">О нас</span>
+                </a>
+              </li>
+              <li>
+                <a>
+                  <span class="icon"><ion-icon name="person-circle-outline"></ion-icon></span>
+                <p id="userEmail"></p>
+                <button type="submit" class="btn btn-primary" onclick="logout()">Logout</button>
+                </a>
+              </li>
+              <div class="bottom">
+              <li>
+                <a href="reg.html" target="_blank">
+                  <span class="icon"><ion-icon name="log-in-outline"></ion-icon></span>
+                  <span class="text">Регистрация</span>
+                </a>
+              </li>
+            </div>
+            </ul>
+          </div>
+          <div class="bucket" onclick="getBucket()">
+            <div class="overlay_text">
+              <span class="bucket_list">0</span>
+            </div>  
+            <i class="fa-solid fa-cart-shopping" id="icon-bucket"></i>
+              <div class="bucket-item">
+                  
+                  <div class="bucket-item__title">Товары в корзине</div>
+                  <div class="bucket-item__list"></div>
+                  <div class="bucket-item__total">Итого: <span class="bucket-item__total-value">0</span> сомони</div>
+                  <div class="bucket-item__buttons">
+                    <button class="bucket-item__button-clear" onclick="clearBucket()">Очистить</button>
+                    <button class="bucket-item__button-buy">Купить</button>
+                  </div>
+                </div>
+          </div>
+        </div>
+      </div>
+    <section class="carousel_main">
+        <div class="container">
+          <div class="row">
+            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="container">
+                    <div class="row caption" id="caption">
+                      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                        <div class="caption_text mt-5">
+                          <h1>iPhone 14 Pro <k class="max">Max.</k></h1>
+                          <p>Приноси в свою жизнь только <k class="max">Плюсы!</k></p>
+                        </div>
+                      </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                          <div class="caption_img">
+                            <img src="img/ip14pp.png" alt="" style="width: 95%; padding-top: 55px; padding-bottom: 55px;">
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="container">
+                    <div class="row caption" id="caption">
+                      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                        <div class="caption_text mt-5">
+                          <h1>iPhone 13 <k class="max">Pro.</k></h1>
+                          <p>Покупай пока не <k class="max">Поздно!</k></p>
+                        </div>
+                      </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                          <div class="caption_img">
+                            <img src="img/ip13pg.png" alt="" style="width: 95%; padding-top: 55px; padding-bottom: 55px;">
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="container">
+                    <div class="row caption" id="caption">
+                      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                        <div class="caption_text mt-5">
+                          <h1>iPhone 12 Pro <k class="max">Max.</k></h1>
+                          <p>Всё просто и <k class="max">Качественно!</k></p>
+                        </div>
+                      </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                          <div class="caption_img">
+                            <img src="img/ip12pmg.png" alt="" style="width: 100%; padding-top: 40px; padding-bottom: 40px;">
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="container">
+        <div class="row phones" id="phones">
+          <div class="col-12">
+            <i class="fa-brands fa-apple" style="color: #ABBDCD; font-size: 25px; "></i>
+            <h2 class="h2">Смартфоны Apple</h2>
+            <hr>
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+            <div class="iphone" id="iPhone 13 Pro">
+              <div class="col-12">
+                <h4 class="mark_1">Выгодная Цена</h4>
+                <img src="img/iph13p.jpg">
+              </div>
+              <div class="col-12">
+                <h3 class="h3">iPhone 13 Pro , 256гб</h3>
+                <p class="price_old"><s>8 890c</s></p>
+                <p class="price" style="color: #E41D94;" data-price="7 990">7 990c <k class="super_price">S</k></p>
+                <div class="add d-flex justify-content-center">
+                  <button onclick="addToBucket('iPhone 13 Pro Цена: 7 990c')" class="add_cart "><i class="fa-solid fa-cart-shopping" style="font-size: 15px;"></i> Добавить в Корзину</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+            <div class="iphone">
+              <div class="col-12">
+                <h4 class="mark_1">Выгодная Цена</h4>
+                <img src="img/iph13pm.jpeg">
+              </div>
+              <div class="col-12">
+                <div class="iphone_text">
+                <h3 class="h3">iPhone 13 Pro Max , 512гб</h3>
+                <p class="price_old"><s>9 590c</s></p>
+                <p class="price">8 990c</p>
+                <div class="add d-flex justify-content-center">
+                  <button onclick="addToBucket('iPhone 13 Pro Max')" class="add_cart " value="8 990"><i class="fa-solid fa-cart-shopping" style="font-size: 15px;"></i> Добавить в Корзину</button>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+            <div class="iphone">
+              <div class="col-12">
+                <h4 class="mark_1">Выгодная Цена</h4>
+                <img src="img/iph13.jpeg">
+              </div>
+              <div class="col-12">
+                <h3 class="h3">iPhone 13 , 256гб</h3>
+                <p class="price_old"><s>7 170c</s></p>
+                <p class="price">6 850c</p>
+                <div class="add d-flex justify-content-center">
+                  <button onclick="addToBucket('iPhone 13')" class="add_cart "><i class="fa-solid fa-cart-shopping" style="font-size: 15px;"></i> Добавить в Корзину</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+            <div class="iphone">
+              <div class="col-12">
+                <h4 class="mark_1">Выгодная Цена</h4>
+                <img src="img/iph11.jpg">
+              </div>
+              <div class="col-12">
+                <h3 class="h3">iPhone 11 , 128гб</h3>
+                <p class="price_old"><s>4 690c</s></p>
+                <p class="price">3 599c</p>
+                <div class="add d-flex justify-content-center">
+                  <button onclick="addToBucket('iPhone 11')" class="add_cart "><i class="fa-solid fa-cart-shopping" style="font-size: 15px;"></i> Добавить в Корзину</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row phones" id="phones">
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+            <div class="iphone">
+              <div class="col-12">
+                <h4 class="mark_1">Выгодная Цена</h4>
+                <img src="img/ip14pmg.png">
+              </div>
+              <div class="col-12">
+                <h3 class="h3">iPhone 14 Pro Max , 256гб</h3>
+                <p class="price_old"><s>14 890c</s></p>
+                <p class="price" style="color: #E41D94;">13 200c <k class="super_price">S</k></p>
+                <button onclick="addToBucket('iPhone 14 Pro Max Цена: 13 200c')" class="add_cart "><i class="fa-solid fa-cart-shopping" style="font-size: 15px;"></i> Добавить в Корзину</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+            <div class="iphone">
+              <div class="col-12">
+                <h4 class="mark_1">Выгодная Цена</h4>
+                <img src="img/ip14p.webp">
+              </div>
+              <div class="col-12">
+                <div class="iphone_text">
+                <h3 class="h3">iPhone 14 Pro , 512гб</h3>
+                <p class="price_old"><s>13 590c</s></p>
+                <p class="price">12 150c</p>
+                <button onclick="addToBucket('iPhone 14 Pro Цена: 12 150с')" class="add_cart "><i class="fa-solid fa-cart-shopping" style="font-size: 15px;"></i> Добавить в Корзину</button>
+              </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+            <div class="iphone">
+              <div class="col-12">
+                <h4 class="mark_1">Выгодная Цена</h4>
+                <img src="img/ip12pmg.png">
+              </div>
+              <div class="col-12">
+                <h3 class="h3">iPhone 12 Pro Max , 256гб</h3>
+                <p class="price_old"><s>6 590c</s></p>
+                <p class="price">5 850c</p>
+                <button onclick="addToBucket('iPhone 12 Pro Max Цена: 5 850c')" class="add_cart "><i class="fa-solid fa-cart-shopping" style="font-size: 15px;"></i> Добавить в Корзину</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+            <div class="iphone">
+              <div class="col-12">
+                <h4 class="mark_1">Выгодная Цена</h4>
+                <img src="img/ip11p.jpg">
+              </div>
+              <div class="col-12">
+                <h3 class="h3">iPhone 11 Pro , 256гб</h3>
+                <p class="price_old"><s>5 150c</s></p>
+                <p class="price">4 599c</p>
+                <button onclick="addToBucket('iPhone 11 Pro Цена: 4 599c')" class="add_cart "><i class="fa-solid fa-cart-shopping" style="font-size: 15px;"></i> Добавить в Корзину</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row phones" id="phones">
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+            <div class="iphone">
+              <div class="col-12">
+                <h4 class="mark_1">Выгодная Цена</h4>
+                <img src="img/ip12.jpeg">
+              </div>
+              <div class="col-12">
+                <h3 class="h3">Iphone 12 , 128гб</h3>
+                <p class="price_old"><s>4 890c</s></p>
+                <p class="price" style="color: #E41D94;">4 250c <k class="super_price">S</k></p>
+                <button onclick="addToBucket('iPhone 12 Цена: 4 890c')" class="add_cart "><i class="fa-solid fa-cart-shopping" style="font-size: 15px;"></i> Добавить в Корзину</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+            <div class="iphone">
+              <div class="col-12">
+                <h4 class="mark_1">Выгодная Цена</h4>
+                <img src="img/ip10.jpg">
+              </div>
+              <div class="col-12">
+                <div class="iphone_text">
+                <h3 class="h3">Iphone X , 128гб</h3>
+                <p class="price_old"><s>3 100c</s></p>
+                <p class="price">2 500c</p>
+                <button onclick="addToBucket('iPhone X Цена: 2 500c')" class="add_cart "><i class="fa-solid fa-cart-shopping" style="font-size: 15px;"></i> Добавить в Корзину</button>
+              </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+            <div class="iphone">
+              <div class="col-12">
+                <h4 class="mark_1">Выгодная Цена</h4>
+                <img src="img/ip12p.jpg">
+              </div>
+              <div class="col-12">
+                <h3 class="h3">Iphone 12 Pro , 128гб</h3>
+                <p class="price_old"><s>5 590c</s></p>
+                <p class="price">5 200c</p>
+                <button onclick="addToBucket('iPhone 12 Pro Цена: 5 200c')" class="add_cart "><i class="fa-solid fa-cart-shopping" style="font-size: 15px;"></i> Добавить в Корзину</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+            <div class="iphone">
+              <div class="col-12">
+                <h4 class="mark_1">Выгодная Цена</h4>
+                <img src="img/ip14.jpg">
+              </div>
+              <div class="col-12">
+                <h3 class="h3">Iphone 14 , 256гб</h3>
+                <p class="price_old"><s>10 150c</s></p>
+                <p class="price">9 599c</p>
+                <button onclick="addToBucket('iPhone 14 Цена: 9 599c')" class="add_cart "><i class="fa-solid fa-cart-shopping" style="font-size: 15px;"></i> Добавить в Корзину</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row phones" id="phones">
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+            <div class="iphone">
+              <div class="col-12">
+                <h4 class="mark_1">Выгодная Цена</h4>
+                <img src="img/ip10s.jpg">
+              </div>
+              <div class="col-12">
+                <h3 class="h3">Iphone XS , 256гб</h3>
+                <p class="price_old"><s>3 240c</s></p>
+                <p class="price" style="color: #E41D94;">2 850c <k class="super_price">S</k></p>
+                <button onclick="addToBucket('iPhone XS Цена: 2 850c')" class="add_cart "><i class="fa-solid fa-cart-shopping" style="font-size: 15px;"></i> Добавить в Корзину</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+            <div class="iphone">
+              <div class="col-12">
+                <h4 class="mark_1">Выгодная Цена</h4>
+                <img src="img/ip8.webp">
+              </div>
+              <div class="col-12">
+                <div class="iphone_text">
+                <h3 class="h3">Iphone 8 , 64гб</h3>
+                <p class="price_old"><s>1 590c</s></p>
+                <p class="price">1 350c</p>
+                <button onclick="addToBucket('iPhone 8 Цена: 1 350c')" class="add_cart "><i class="fa-solid fa-cart-shopping" style="font-size: 15px;"></i> Добавить в Корзину</button>
+              </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+            <div class="iphone">
+              <div class="col-12">
+                <h4 class="mark_1">Выгодная Цена</h4>
+                <img src="img/ip10sm.webp">
+              </div>
+              <div class="col-12">
+                <h3 class="h3">Iphone XS Max , 128гб</h3>
+                <p class="price_old"><s>3 590c</s></p>
+                <p class="price">3 150c</p>
+                <button onclick="addToBucket('iPhone XS Max Цена: 3 150c')" class="add_cart "><i class="fa-solid fa-cart-shopping" style="font-size: 15px;"></i> Добавить в Корзину</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+            <div class="iphone">
+              <div class="col-12">
+                <h4 class="mark_1">Выгодная Цена</h4>
+                <img src="img/ip8p.jpg">
+              </div>
+              <div class="col-12">
+                <h3 class="h3">Iphone 8 Plus , 256гб</h3>
+                <p class="price_old"><s>2 150c</s></p>
+                <p class="price">1 750с</p>
+                <button onclick="addToBucket('iPhone 8 Plus Цена: 1 750c')" class="add_cart "><i class="fa-solid fa-cart-shopping" style="font-size: 15px;"></i> Добавить в Корзину</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid footer_main mt-5">
+        <div class="footer col-12">
+              <div class="footer_text"><p>Copyright © 2023 By "Mirzoakbar" Официальный сайт iStore | Контакты | О нас</p></div>
+      </div>
+      </div>
+      <script src="js/reg.js"></script>
+  <script src="js/bucket.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

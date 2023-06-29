@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Раздел Смартфоны | Bevel-Store</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="icon" href="img/favicon.svg" type="image/x-icon">
+</head>
+<body onload="getUser()">
+    <div class="container-fluid">
+        <div class="row menu">
+          <div class="sidenav">
+            <ul>
+              <li class="logo">
+                <a href="#">
+                  <span class="icon"><i class="fa-brands fa-shopware" style="color: #333333;"></i></span>
+                  <span class="text">Bevel-Store</span>
+                </a>
+              </li>
+              <li>
+                <a href="index.html">
+                  <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                  <span class="text">Home</span>
+                </a>
+              </li>
+              <li>
+                <a href="phones.html">
+                  <span class="icon"><ion-icon name="phone-portrait-outline"></ion-icon></span>
+                  <span class="text">Смартфоны</span>
+                </a>
+              </li>
+              <li>
+                <a href="watch.html">
+                  <span class="icon"><ion-icon name="watch-outline"></ion-icon></span>
+                  <span class="text">Смарт-Часы</span>
+                </a>
+              </li>
+              <li>
+                <a href="about.html">
+                  <span class="icon"><ion-icon name="people-outline"></ion-icon></span>
+                  <span class="text">О нас</span>
+                </a>
+              </li>
+              <li>
+                <a>
+                  <span class="icon"><ion-icon name="person-circle-outline"></ion-icon></span>
+                <p id="userEmail"></p>
+                <button type="submit" class="btn btn-primary" onclick="logout()">Logout</button>
+                </a>
+              </li>
+              <div class="bottom">
+              <li>
+                <a href="reg.html" target="_blank">
+                  <span class="icon"><ion-icon name="log-in-outline"></ion-icon></span>
+                  <span class="text">Регистрация</span>
+                </a>
+              </li>
+            </div>
+            </ul>
+          </div>
+          <div class="bucket" onclick="getBucket()">
+            <i class="fa-solid fa-cart-shopping" id="icon-bucket"></i>
+              <div class="bucket-item">
+                  
+                  <div class="bucket-item__title">Товары в корзине</div>
+                  <div class="bucket-item__list"></div>
+                  <div class="bucket-item__total">Итого: <span class="bucket-item__total-value">0</span> сомони</div>
+                  <div class="bucket-item__buttons">
+                    <button class="bucket-item__button-clear" onclick="clearBucket()">Очистить</button>
+                    <button class="bucket-item__button-buy">Купить</button>
+                  </div>
+                </div>
+          </div>
+        </div>
+      </div>
+    <section class="carousel_main">
+        <div class="container">
+          <div class="row">
+            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="container">
+                    <div class="row caption" id="caption">
+                      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                        <div class="caption_text mt-5">
+                          <h1>iPhone 14 Pro <k class="max">Max.</k></h1>
+                          <p>Приноси в свою жизнь только <k class="max">Плюсы!</k></p>
+                          <a href="apple.html"><button type="button" ><i class="fa-solid fa-cart-shopping" style="font-size: 15px;"></i> Купить Сейчас!</button></a>
+                        </div>
+                      </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                          <div class="caption_img">
+                            <img src="img/ip14pmg.png" alt="" style="width: 111%;">
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="container">
+                    <div class="row caption" id="caption">
+                      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                        <div class="caption_text mt-5">
+                          <h1>Xiaomi Poco X5 <k class="max">Pro.</k></h1>
+                          <p>Покупай пока не <k class="max">Поздно!</k></p>
+                          <a href="xiaomi.html"><button type="button" ><i class="fa-solid fa-cart-shopping" style="font-size: 15px;"></i> Купить Сейчас!</button></a>
+                        </div>
+                      </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                          <div class="caption_img">
+                            <img src="img/pocox5.png" alt="" style="width: 111%;">
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="container">
+                    <div class="row caption" id="caption">
+                      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                        <div class="caption_text mt-5">
+                          <h1>Galaxy S23 <k class="max">Plus.</k></h1>
+                          <p>Всё просто и <k class="max">Качественно!</k></p>
+                          <a href="samsung.html"><button type="button" ><i class="fa-solid fa-cart-shopping" style="font-size: 15px;"></i> Купить Сейчас!</button></a>
+                        </div>
+                      </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                          <div class="caption_img">
+                            <img src="img/gs23p.png" alt="" style="width: 100%; padding-top: 30px; padding-bottom: 30px;">
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="container" id="categories_3">
+        <section class="mt-5">
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 col-xl-3">
+                <a href="apple.html">
+                    <div class="card text-dark p-4">
+                        <img src="img/iphone_14-11.webp" class="card-img" alt="...">
+                        <div class="card-img-overlay">
+                          <h5 class="card-title">Смартфоны Apple</h5>
+                        </div>
+                      </div> 
+                </a>     
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 col-xl-3">
+                <a href="xiaomi.html">
+                    <div class="card  text-dark p-4">
+                        <img src="img/xiaomi-mi11-1.jpg" class="card-img" alt="...">
+                        <div class="card-img-overlay">
+                          <h5 class="card-title">Смартфоны Xiaomi</h5>
+                        </div>
+                      </div>
+                </a>      
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 col-xl-3">
+                <a href="samsung.html">
+                  <div class="card  text-dark p-4">
+                    <img src="img/galaxy-s23-.avif" class="card-img" alt="...">
+                    <div class="card-img-overlay">
+                      <h5 class="card-title">Смартфоны Samsung</h5>
+                    </div>
+                  </div> 
+                </a>     
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 col-xl-3">
+                <a href="watch.html">
+                  <div class="card  text-dark p-4">
+                    <img src="img/gw4p.png" class="card-img" alt="...">
+                    <div class="card-img-overlay">
+                      <h5 class="card-title">Смарт-Часы</h5>
+                    </div>
+                  </div> 
+                </a>     
+              </div>
+            </div>
+          </section>
+          <div class="row phones" id="phones">
+            <div class="col-12">
+              <i class="fa-brands fa-apple" style="color: #ABBDCD; font-size: 25px; "></i>
+              <h2 class="h2">Смартфоны Apple</h2>
+              <hr>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+              <div class="iphone">
+                <div class="col-12">
+                  <h4 class="mark_1">Выгодная Цена</h4>
+                  <img src="img/iph13p.jpg">
+                </div>
+                <div class="col-12">
+                  <h3 class="h3">Iphone 13 Pro</h3>
+                  <p class="price_old"><s>7 890c</s></p>
+                  <p class="price" style="color: #E41D94;">6 999c <k class="super_price">S</k></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+              <div class="iphone">
+                <div class="col-12">
+                  <h4 class="mark_1">Выгодная Цена</h4>
+                  <img src="img/iph13pm.jpeg">
+                </div>
+                <div class="col-12">
+                  <div class="iphone_text">
+                  <h3 class="h3">Iphone 13 Pro Max</h3>
+                  <p class="price_old"><s>8 590c</s></p>
+                  <p class="price">7 999c</p>
+                </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+              <div class="iphone">
+                <div class="col-12">
+                  <h4 class="mark_1">Выгодная Цена</h4>
+                  <img src="img/iph13.jpeg">
+                </div>
+                <div class="col-12">
+                  <h3 class="h3">Iphone 13</h3>
+                  <p class="price_old"><s>6 890c</s></p>
+                  <p class="price">6 200c</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+              <div class="iphone">
+                <div class="col-12">
+                  <h4 class="mark_1">Выгодная Цена</h4>
+                  <img src="img/iph11.jpg">
+                </div>
+                <div class="col-12">
+                  <h3 class="h3">Iphone 11</h3>
+                  <p class="price_old"><s>4 690c</s></p>
+                  <p class="price">3 599c</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row phones" id="phones">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+              <div class="iphone">
+                <div class="col-12">
+                  <h4 class="mark_1">Выгодная Цена</h4>
+                  <img src="img/ip14pmg.png">
+                </div>
+                <div class="col-12">
+                  <h3 class="h3">Iphone 14 Pro Max</h3>
+                  <p class="price_old"><s>14 890c</s></p>
+                  <p class="price" style="color: #E41D94;">13 200c <k class="super_price">S</k></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+              <div class="iphone">
+                <div class="col-12">
+                  <h4 class="mark_1">Выгодная Цена</h4>
+                  <img src="img/ip14p.webp">
+                </div>
+                <div class="col-12">
+                  <div class="iphone_text">
+                  <h3 class="h3">Iphone 14 Pro</h3>
+                  <p class="price_old"><s>13 590c</s></p>
+                  <p class="price">12 150c</p>
+                </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+              <div class="iphone">
+                <div class="col-12">
+                  <h4 class="mark_1">Выгодная Цена</h4>
+                  <img src="img/ip12pmg.png">
+                </div>
+                <div class="col-12">
+                  <h3 class="h3">Iphone 12 Pro Max</h3>
+                  <p class="price_old"><s>6 590c</s></p>
+                  <p class="price">5 850c</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+              <div class="iphone">
+                <div class="col-12">
+                  <h4 class="mark_1">Выгодная Цена</h4>
+                  <img src="img/ip11p.jpg">
+                </div>
+                <div class="col-12">
+                  <h3 class="h3">Iphone 11 Pro</h3>
+                  <p class="price_old"><s>5 150c</s></p>
+                  <p class="price">4 599c</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row phones" id="phones">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+              <div class="iphone">
+                <div class="col-12">
+                  <h4 class="mark_1">Выгодная Цена</h4>
+                  <img src="img/ip12.jpeg">
+                </div>
+                <div class="col-12">
+                  <h3 class="h3">Iphone 12</h3>
+                  <p class="price_old"><s>4 890c</s></p>
+                  <p class="price" style="color: #E41D94;">4 250c <k class="super_price">S</k></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+              <div class="iphone">
+                <div class="col-12">
+                  <h4 class="mark_1">Выгодная Цена</h4>
+                  <img src="img/ip10.jpg">
+                </div>
+                <div class="col-12">
+                  <div class="iphone_text">
+                  <h3 class="h3">Iphone X</h3>
+                  <p class="price_old"><s>3 100c</s></p>
+                  <p class="price">2 500c</p>
+                </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+              <div class="iphone">
+                <div class="col-12">
+                  <h4 class="mark_1">Выгодная Цена</h4>
+                  <img src="img/ip12p.jpg">
+                </div>
+                <div class="col-12">
+                  <h3 class="h3">Iphone 12 Pro</h3>
+                  <p class="price_old"><s>5 590c</s></p>
+                  <p class="price">5 200c</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+              <div class="iphone">
+                <div class="col-12">
+                  <h4 class="mark_1">Выгодная Цена</h4>
+                  <img src="img/ipse2.jpeg">
+                </div>
+                <div class="col-12">
+                  <h3 class="h3">Iphone SE 2</h3>
+                  <p class="price_old"><s>3 150c</s></p>
+                  <p class="price">2 599c</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row phones" id="phones">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+              <div class="iphone">
+                <div class="col-12">
+                  <h4 class="mark_1">Выгодная Цена</h4>
+                  <img src="img/ip10s.jpg">
+                </div>
+                <div class="col-12">
+                  <h3 class="h3">Iphone XS</h3>
+                  <p class="price_old"><s>3 240c</s></p>
+                  <p class="price" style="color: #E41D94;">2 850c <k class="super_price">S</k></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+              <div class="iphone">
+                <div class="col-12">
+                  <h4 class="mark_1">Выгодная Цена</h4>
+                  <img src="img/ip8.webp">
+                </div>
+                <div class="col-12">
+                  <div class="iphone_text">
+                  <h3 class="h3">Iphone 8</h3>
+                  <p class="price_old"><s>1 590c</s></p>
+                  <p class="price">1 350c</p>
+                </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+              <div class="iphone">
+                <div class="col-12">
+                  <h4 class="mark_1">Выгодная Цена</h4>
+                  <img src="img/ip10sm.webp">
+                </div>
+                <div class="col-12">
+                  <h3 class="h3">Iphone XS Max</h3>
+                  <p class="price_old"><s>3 590c</s></p>
+                  <p class="price">3 150c</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+              <div class="iphone">
+                <div class="col-12">
+                  <h4 class="mark_1">Выгодная Цена</h4>
+                  <img src="img/ip8p.jpg">
+                </div>
+                <div class="col-12">
+                  <h3 class="h3">Iphone 8 Plus</h3>
+                  <p class="price_old"><s>2 150c</s></p>
+                  <p class="price">1 750с</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row phones" id="phones">
+            <div class="col-12">
+              <i class="fa-brands fa-android" style="color: #ABBDCD; font-size: 25px; "></i>
+              <h2 class="h2">Смартфоны Xiaomi</h2>
+              <hr>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+              <div class="iphone">
+                <div class="col-12">
+                  <h4 class="mark_1">Выгодная Цена</h4>
+                  <img src="img/x13p.png">
+                </div>
+                <div class="col-12">
+                  <h3 class="h3">Xiaomi Mi 13 Pro</h3>
+                  <p class="price_old"><s>7 890c</s></p>
+                  <p class="price" style="color: #E41D94;">6 999c <k class="super_price">S</k></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+              <div class="iphone">
+                <div class="col-12">
+                  <h4 class="mark_1">Выгодная Цена</h4>
+                  <img src="img/x12tpro.png">
+                </div>
+                <div class="col-12">
+                  <div class="iphone_text">
+                  <h3 class="h3">Xiaomi Mi 12T Pro</h3>
+                  <p class="price_old"><s>6 590c</s></p>
+                  <p class="price">5 999c</p>
+                </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+              <div class="iphone">
+                <div class="col-12">
+                  <h4 class="mark_1">Выгодная Цена</h4>
+                  <img src="img/pocox5.png">
+                </div>
+                <div class="col-12">
+                  <h3 class="h3">Xiaomi Poco X5 Pro</h3>
+                  <p class="price_old"><s>5 890c</s></p>
+                  <p class="price">5 200c</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+              <div class="iphone">
+                <div class="col-12">
+                  <h4 class="mark_1">Выгодная Цена</h4>
+                  <img src="img/xrn12.jpg">
+                </div>
+                <div class="col-12">
+                  <h3 class="h3">Redmi Note 12 4G</h3>
+                  <p class="price_old"><s>2 790c</s></p>
+                  <p class="price">2 599c</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row phones" id="phones">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+              <div class="iphone">
+                <div class="col-12">
+                  <h4 class="mark_1">Выгодная Цена</h4>
+                  <img src="img/xrn11p.jpg">
+                </div>
+                <div class="col-12">
+                  <h3 class="h3">Redmi Note 11 Pro</h3>
+                  <p class="price_old"><s>2 590c</s></p>
+                  <p class="price" style="color: #E41D94;">2 200c <k class="super_price">S</k></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+              <div class="iphone">
+                <div class="col-12">
+                  <h4 class="mark_1">Выгодная Цена</h4>
+                  <img src="img/pocox4p.jpg">
+                </div>
+                <div class="col-12">
+                  <div class="iphone_text">
+                  <h3 class="h3">Xiaomi Poco X4 Pro 5G</h3>
+                  <p class="price_old"><s>3 390c</s></p>
+                  <p class="price">3 150c</p>
+                </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+              <div class="iphone">
+                <div class="col-12">
+                  <h4 class="mark_1">Выгодная Цена</h4>
+                  <img src="img/x13lite.jpg">
+                </div>
+                <div class="col-12">
+                  <h3 class="h3">Xiaomi Mi 13 Lite</h3>
+                  <p class="price_old"><s>6 290c</s></p>
+                  <p class="price">5 450c</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+              <div class="iphone">
+                <div class="col-12">
+                  <h4 class="mark_1">Выгодная Цена</h4>
+                  <img src="img/x10.jpg">
+                </div>
+                <div class="col-12">
+                  <h3 class="h3">Xiaomi Mi 10</h3>
+                  <p class="price_old"><s>2 550c</s></p>
+                  <p class="price">2 350c</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row phones" id="phones">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+              <div class="iphone">
+                <div class="col-12">
+                  <h4 class="mark_1">Выгодная Цена</h4>
+                  <img src="img/r10c.png">
+                </div>
+                <div class="col-12">
+                  <h3 class="h3">Redmi 10C</h3>
+                  <p class="price_old"><s>1 590c</s></p>
+                  <p class="price">1 350c</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+              <div class="iphone">
+                <div class="col-12">
+                  <h4 class="mark_1">Выгодная Цена</h4>
+                  <img src="img/xm9t.jpg">
+                </div>
+                <div class="col-12">
+                  <div class="iphone_text">
+                  <h3 class="h3">Xiaomi Mi 9T</h3>
+                  <p class="price_old"><s>2 450c</s></p>
+                  <p class="price">2 100c</p>
+                </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+              <div class="iphone">
+                <div class="col-12">
+                  <h4 class="mark_1">Выгодная Цена</h4>
+                  <img src="img/xrn8.jpg">
+                </div>
+                <div class="col-12">
+                  <h3 class="h3">Redmi Note 8T</h3>
+                  <p class="price_old"><s>1 590c</s></p>
+                  <p class="price">1 200c</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+              <div class="iphone">
+                <div class="col-12">
+                  <h4 class="mark_1">Выгодная Цена</h4>
+                  <img src="img/xm11l.webp">
+                </div>
+                <div class="col-12">
+                  <h3 class="h3">Xiaomi Mi 11 Lite 5G</h3>
+                  <p class="price_old"><s>2 850c</s></p>
+                  <p class="price">2 699c</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row phones" id="phones">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+              <div class="iphone">
+                <div class="col-12">
+                  <h4 class="mark_1">Выгодная Цена</h4>
+                  <img src="img/pocox3gt.jpg ">
+                </div>
+                <div class="col-12">
+                  <h3 class="h3">Xiaomi Poco X3 GT</h3>
+                  <p class="price_old"><s>3 240c</s></p>
+                  <p class="price">2 850c</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+              <div class="iphone">
+                <div class="col-12">
+                  <h4 class="mark_1">Выгодная Цена</h4>
+                  <img src="img/xrn10ppng.png">
+                </div>
+                <div class="col-12">
+                  <div class="iphone_text">
+                  <h3 class="h3">Redmi Note 10 Pro</h3>
+                  <p class="price_old"><s>1 890c</s></p>
+                  <p class="price">1 650c</p>
+                </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+              <div class="iphone">
+                <div class="col-12">
+                  <h4 class="mark_1">Выгодная Цена</h4>
+                  <img src="img/xr9.jpg">
+                </div>
+                <div class="col-12">
+                  <h3 class="h3">Redmi 9</h3>
+                  <p class="price_old"><s>1 150c</s></p>
+                  <p class="price">1 050c</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+              <div class="iphone">
+                <div class="col-12">
+                  <h4 class="mark_1">Выгодная Цена</h4>
+                  <img src="img/xr9c.png">
+                </div>
+                <div class="col-12">
+                  <h3 class="h3">Redmi 9C</h3>
+                  <p class="price_old"><s>1 350c</s></p>
+                  <p class="price">1 150с</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row phones" id="phones2">
+            <div class="col-12">
+              <i class="fa-brands fa-android" style="color: #ABBDCD; font-size: 25px; "></i>
+              <h2 class="h2">Смартфоны Samsung</h2>
+              <hr>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+              <div class="iphone">
+                <div class="col-12">
+                  <h4 class="mark_1">Супер Цена</h4>
+                  <img src="img/gs22u.jpeg">
+                </div>
+                <div class="col-12">
+                  <h3 class="h3">Galaxy S22 Ultra</h3>
+                  <p class="price_old"><s>8 890c</s></p>
+                  <p class="price">7 540c</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+              <div class="iphone">
+                <div class="col-12">
+                  <h4 class="mark_1">Выгодная Цена</h4>
+                  <img src="img/ga53.jpeg">
+                </div>
+                <div class="col-12">
+                  <h3 class="h3">Galaxy A53</h3>
+                  <p class="price_old"><s>3 750c</s></p>
+                  <p class="price" style="color: #E41D94;">3 190c <k class="super_price">S</k></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+              <div class="iphone">
+                <div class="col-12">
+                  <h4 class="mark_1">Выгодная Цена</h4>
+                  <img src="img/ga73.jpeg">
+                </div>
+                <div class="col-12">
+                  <h3 class="h3">Galaxy A73</h3>
+                  <p class="price_old"><s>4 350c</s></p>
+                  <p class="price">3 750c</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+              <div class="iphone">
+                <div class="col-12">
+                  <h4 class="mark_1">Выгодная Цена</h4>
+                  <img src="img/gs22p.jpeg">
+                </div>
+                <div class="col-12">
+                  <h3 class="h3">Galaxy S22 Plus</h3>
+                  <p class="price_old"><s>7 390c</s></p>
+                  <p class="price">6 590c</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row phones" id="phones">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+              <div class="iphone">
+                <div class="col-12">
+                  <h4 class="mark_1">Выгодная Цена</h4>
+                  <img src="img/gs23p.png">
+                </div>
+                <div class="col-12">
+                  <h3 class="h3">Galaxy S23 Plus</h3>
+                  <p class="price_old"><s>9 890c</s></p>
+                  <p class="price" style="color: #E41D94;">9 200c <k class="super_price">S</k></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+              <div class="iphone">
+                <div class="col-12">
+                  <h4 class="mark_1">Выгодная Цена</h4>
+                  <img src="img/s23.png">
+                </div>
+                <div class="col-12">
+                  <div class="iphone_text">
+                  <h3 class="h3">Galaxy S23 Ultra</h3>
+                  <p class="price_old"><s>13 590c</s></p>
+                  <p class="price">12 150c</p>
+                </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+              <div class="iphone">
+                <div class="col-12">
+                  <h4 class="mark_1">Выгодная Цена</h4>
+                  <img src="img/ga54.png">
+                </div>
+                <div class="col-12">
+                  <h3 class="h3">Galaxy A54 5G</h3>
+                  <p class="price_old"><s>5 590c</s></p>
+                  <p class="price">4 550c</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+              <div class="iphone">
+                <div class="col-12">
+                  <h4 class="mark_1">Выгодная Цена</h4>
+                  <img src="img/gzfo4.png">
+                </div>
+                <div class="col-12">
+                  <h3 class="h3">Galaxy ZFold 3 5G</h3>
+                  <p class="price_old"><s>7 150c</s></p>
+                  <p class="price">6 599c</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row phones" id="phones">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+              <div class="iphone">
+                <div class="col-12">
+                  <h4 class="mark_1">Выгодная Цена</h4>
+                  <img src="img/gzf4.png">
+                </div>
+                <div class="col-12">
+                  <h3 class="h3">Galaxy ZFlip 4 5G</h3>
+                  <p class="price_old"><s>7 890c</s></p>
+                  <p class="price">7 250c</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+              <div class="iphone">
+                <div class="col-12">
+                  <h4 class="mark_1">Выгодная Цена</h4>
+                  <img src="img/gn20u.jpg">
+                </div>
+                <div class="col-12">
+                  <div class="iphone_text">
+                  <h3 class="h3">Galaxy Note 20 Ultra</h3>
+                  <p class="price_old"><s>4 500c</s></p>
+                  <p class="price">4 250c</p>
+                </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+              <div class="iphone">
+                <div class="col-12">
+                  <h4 class="mark_1">Выгодная Цена</h4>
+                  <img src="img/gn10p5.jpg">
+                </div>
+                <div class="col-12">
+                  <h3 class="h3">Galaxy Note 10+ 5G</h3>
+                  <p class="price_old"><s>3 590c</s></p>
+                  <p class="price">3 200c</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+              <div class="iphone">
+                <div class="col-12">
+                  <h4 class="mark_1">Выгодная Цена</h4>
+                  <img src="img/ga14.webp">
+                </div>
+                <div class="col-12">
+                  <h3 class="h3">Galaxy A14 5G</h3>
+                  <p class="price_old"><s>3 150c</s></p>
+                  <p class="price">2 399c</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row phones" id="phones">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+              <div class="iphone">
+                <div class="col-12">
+                  <h4 class="mark_1">Выгодная Цена</h4>
+                  <img src="img/ga33.jpg">
+                </div>
+                <div class="col-12">
+                  <h3 class="h3">Galaxy A33 5G</h3>
+                  <p class="price_old"><s>3 240c</s></p>
+                  <p class="price">2 850c</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+              <div class="iphone">
+                <div class="col-12">
+                  <h4 class="mark_1">Выгодная Цена</h4>
+                  <img src="img/gs10.jpg">
+                </div>
+                <div class="col-12">
+                  <div class="iphone_text">
+                  <h3 class="h3">Galaxy S10</h3>
+                  <p class="price_old"><s>3 290c</s></p>
+                  <p class="price">2 750c</p>
+                </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+              <div class="iphone">
+                <div class="col-12">
+                  <h4 class="mark_1">Выгодная Цена</h4>
+                  <img src="img/gf23.jpg">
+                </div>
+                <div class="col-12">
+                  <h3 class="h3">Galaxy F23 5G</h3>
+                  <p class="price_old"><s>2 590c</s></p>
+                  <p class="price">2 250c</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+              <div class="iphone">
+                <div class="col-12">
+                  <h4 class="mark_1">Выгодная Цена</h4>
+                  <img src="img/gs22g.png">
+                </div>
+                <div class="col-12">
+                  <h3 class="h3">Galaxy S22 5G</h3>
+                  <p class="price_old"><s>6 150c</s></p>
+                  <p class="price">5 250с</p>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="container-fluid footer_main mt-5">
+        <div class="footer col-12">
+              <div class="footer_text"><p>Copyright © 2023 By "Mirzoakbar" Официальный сайт iStore | Контакты | О нас</p></div>
+      </div>
+      </div>
+  <script src="js/bucket.js"></script>
+  <script src="js/reg.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

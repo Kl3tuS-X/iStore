@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase auth</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://www.gstatic.com/firebasejs/9.20.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.20.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.20.0/firebase-auth-compat.js"></script>
+
+  </head>
+<body style="background-color: #f3f3f3;">
+    <!-- Регистрация -->
+    <div class="container" style="width: 80%;">
+        <!-- Форма -->
+        <div class="form">
+          <h1>Войти</h1>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Email адресс</label>
+              <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Пароль</label>
+              <input type="password" class="form-control" id="password">
+            </div>
+            <button type="submit" class="btn btn-primary" onclick="login()">Войти</button>
+            <a href="reg.html">Нету аккаунта?</a>
+        </div>   
+    </div>
+    <script src="js/reg.js"></script>
+</body>
+</html>
